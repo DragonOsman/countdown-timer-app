@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Countdown Timer App</title>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <h1>DragonOsman's Countdown Timer</h1>
+    <form name="timer" id="timer">
+      <input type="text" name="event" id="event" placeholder="Event" required />
+      <input type="datetime-local" name="date-time-input" id="input" required />
+      <br />
+      <input type="button" value="Start" id="start-btn" />
+      <input type="button" value="Stop" id="stop-btn" />
+    </form>
+    <br />
+    <div id="clockdiv">
+      <div id="month-div">
+        <span class="months" id="month">0</span>
+        <div class="smalltext">Months</div>
+      </div>
+      <div id="day-div">
+        <span class="days" id="day">0</span>
+        <div class="smalltext">Days</div>
+      </div>
+      <div id="hour-div">
+        <span class="hours" id="hour">0</span>
+        <div class="smalltext">Hours</div>
+      </div>
+      <div id="minute-div">
+        <span class="minutes" id="minute">0</span>
+        <div class="smalltext">Minutes</div>
+      </div>
+      <div id="second-div">
+        <span class="seconds" id="second">0</span>
+        <div class="smalltext">Seconds</div>
+      </div>
+    </div>
+
+    <p id="is-it-time"></p>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

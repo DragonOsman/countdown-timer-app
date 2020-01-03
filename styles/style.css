@@ -1,0 +1,35 @@
+body {
+  text-align: center;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-repeat: no-repeat;
+}
+
+#month-div, #day-div, #hour-div, #minute-div, #second-div {
+  display: inline-block;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  background-color: #2f2f2f;
+  font-size: 30px;
+  border-radius: 3px;
+}
+
+#clockdiv div > span {
+  background-color: black;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+form {
+  margin-top: 50px;
+}
+
+.smalltext {
+  font-size: 16px;
+  padding-top: 5px;
+  margin-top: 30px;
+  top: 25%;
+}
