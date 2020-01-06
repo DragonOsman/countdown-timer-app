@@ -36,7 +36,7 @@ function initializeClock() {
 
       const daysInMonth = [31, february, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
       let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-      const months = Math.floor(days / daysInMonth[deadline.getMonth()]);
+      let months = Math.floor(days / daysInMonth[deadline.getMonth()]);
       days %= daysInMonth[deadline.getMonth()];
 
       const currentDate = new Date();
