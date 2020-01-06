@@ -38,6 +38,23 @@ function initializeClock() {
       let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       const months = Math.floor(days / daysInMonth[deadline.getMonth()]);
       days %= daysInMonth[deadline.getMonth()];
+
+      const currentDate = new Date();
+      if (currentDate.getMonth() < deadline.getMonth() && currentDate.getDate() === deadline.getDate()) {
+        days = 0;
+        const monthDiff = deadline.getMonth() - currentDate.getMonth();
+        months = monthDiff;
+      } else if (currentDate.getDate() < deadline.getDate() && currentDate.getMonth() === deadline.getMonth()) {
+        const daysDiff = deadline.getDate() - currentDate.getDate();
+        days = daysDiff;
+        months = 0;
+      } else if (currentDate.getMonth() < deadline.getMonth() && currentDate.getDate() < deadline.getDate()) {
+        const daysDiff = deadline.getDate() - currentDate.getDate();
+        const monthsDiff = deadline.getMonth() - currentDate.getMonth();
+        days = daysDiff;
+        months = monthsDiff;
+      }
+
       const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
