@@ -18,7 +18,8 @@ function leapYear(year) {
 
 function initializeClock() {
   const deadline = getInput();
-  if (deadline < Date.now()) {
+  const currentDate = new Date();
+  if (deadline < currentDate) {
     const errorPara = document.createElement("p");
     errorPara.textContent = "Sorry; we don't count up from a past event";
     document.querySelector("form").prepend(errorPara);
@@ -39,7 +40,6 @@ function initializeClock() {
       let months = Math.floor(days / daysInMonth[deadline.getMonth()]);
       days %= daysInMonth[deadline.getMonth()];
 
-      const currentDate = new Date();
       if (currentDate.getMonth() < deadline.getMonth() && currentDate.getDate() === deadline.getDate()) {
         days = 0;
         const monthDiff = deadline.getMonth() - currentDate.getMonth();
